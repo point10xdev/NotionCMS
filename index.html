@@ -2,85 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Loki.png" />
+    <!--
+      Ensures the page is responsive on different devices.
+      Concept: Viewport meta tag for responsive design.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Notion as CMS</title>
     
+    <!-- Importing CSS from open-props, a utility CSS framework.-->
     <link rel="stylesheet" href="https://unpkg.com/open-props"/>
     <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css"/>
-    
+
     <script type="module" src="/src/main.js"></script>
   </head>
+  
   <body>
+    <!-- 
+      Main container where blog cards will be displayed.
+      Concept: HTML semantic tags (main).
+    -->
     <main class="card-container">
-      <!-- <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 1</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article>
-      <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 2</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article>
-      <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 3</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article>
-      <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 1</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article>
-      <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 2</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article>
-      <article class="card">
-        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
-        <h2 class="card__heading">Blog 3</h2>
-          <div class="card__content">
-            <p> This is a sample website using Notion as its CMS</p>
-          </div>
-          <a href="#" class="card__btn">Check this out!</a>
-      </article> -->
-      
-      <!-- Cards will be dynamically inserted here -->
 
-      <!-- Skeleton Buffer -->
+      <!--
+      <article class="card">
+        <img src = "https://doodleipsum.com/350x350/avatar-2?i=11865dd9308e8b19ed4e2dffff676b2b" alt="avatar 5" class ="card__image">
+        <h2 class="card__heading">Blog 1</h2>
+        <div class="card__content">
+          <p>This is a sample website using Notion as its CMS</p>
+        </div>
+        <a href="#" class="card__btn">Check this out!</a>
+      </article>
+      -->
+
+      <!--Cards will be dynamically inserted here via JavaScript.-->
+
+      <!-- Skeleton Buffer
       <script>
+        /*
+          Immediately Invoked Function Expression (IIFE)
+          Concept: Runs this function immediately after defining it.
+        */
         (function loadSkeletonBuffer(){
+          // Declaring an object 'skeleton' with HTML and CSS keys, both empty for now.
+          // Concept: JavaScript object literals.
           const skeleton = {
             html: ``,
             css : ``,
           }
 
-          document.queryselector('.card-container').
+          /*
+            Dynamically selecting the 'card-container' element from the DOM
+            Concept: DOM Selection using document.querySelector()
+          */
+          document.querySelector('.card-container').
+          /*
+            Inserting 6 copies of skeleton HTML (empty here) plus the CSS into the container.
+            Concept: String repeat() method and DOM manipulation.
+          */
           innerHTML = skeleton.html.repeat(6) + skeleton.css
 
-        }
-        )
-
+        })()  // <--- Important: Immediately calling the function. -->
       </script>
-
     </main>
-
   </body>
 </html>

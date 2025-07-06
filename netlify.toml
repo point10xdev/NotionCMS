@@ -1,9 +1,15 @@
+# Netlify configuration file
+# Concept: Netlify uses netlify.toml to configure build settings, deploy rules, and redirects
+
 [build]
-    command = "npm run build"
-    publish = "dist" 
-    functions = "functions"
+  command = "npm run build"       # 📦 Command to build your project (runs before deployment)
+  publish = "dist"                # 📂 Directory to deploy as your website (output folder from build)
+  functions = "functions"         # 📂 Directory where Netlify will look for serverless functions (API handlers)
+
+# Redirect rules section
+# Concept: Netlify redirects map incoming URLs to different destinations, often for APIs or routing
 
 [[redirects]]
-    from ="/api/*"
-    to = "/.netlify/functions/:splat"
-    status = 200
+  from = "/api/*"                 # 🌐 Match any URL starting with /api/
+  to = "/.netlify/functions/:splat" # 🔄 Redirect to corresponding function in the functions folder
+  status = 200                    # 📡 HTTP status code for the redirect (200 = OK, treat as successful)

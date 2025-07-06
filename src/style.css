@@ -1,59 +1,84 @@
+/* 
+  Style the entire page (body)
+  Concept: CSS Grid, CSS Variables (Custom Properties)
+*/
 body {
-  display: grid;
-  place-items: center;
-  background-image: var(--gradient-15);
-  min-height: 100vh;
-  margin: 0;
+  display: grid; /* Use CSS Grid layout */
+  place-items: center; /* Center content both vertically and horizontally */
+  background-image: var(--gradient-15); /* Use a CSS variable for the background gradient */
+  min-height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
 }
 
-.card__heading{
-  color: var(--pink-4);
-}
-.card__content{
-  color: black;
-  gap: var(--size-2)
-}
-
-.card__btn{
-  background-color: var(--pink-3);
-  width: max-content;
-  color: white;
-  padding: var(--size-2) var(--size-fluid-2);
-  border-radius: var(--radius-4);
-
-  margin-top: var(--size-fluid-1);
-  box-shadow: var(--shadow-2);
-  transition: all 250ms var(--ease-squish-3);
+/* 
+  Style for card heading (h2 inside card)
+  Concept: Class selector, CSS Variables
+*/
+.card__heading {
+  color: var(--pink-4); /* Set text color using a CSS variable */
 }
 
-.card__btn:is(:hover, :focus){
-  text-decoration: none;
-  box-shadow: none;
-  transform: scale(1.1);
+/* 
+  Style for card content (text inside the card)
+  Concept: Class selector, spacing with gap
+*/
+.card__content {
+  color: black; /* Set text color */
+  gap: var(--size-2); /* Space between items inside if used in a flex/grid layout */
 }
 
-.card-container{
-  display: flex;
-  align-items: start;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap : var(--size-fluid-4);
-  margin : var(--size-fluid-4);
-  max-width: 100%;
+/* 
+  Style for button inside card
+  Concept: Styling buttons with padding, border-radius, transitions
+*/
+.card__btn {
+  background-color: var(--pink-3); /* Button background color from variable */
+  width: max-content; /* Button width adapts to content size */
+  color: white; /* Text color */
+  padding: var(--size-2) var(--size-fluid-2); /* Padding top-bottom and left-right using variables */
+  border-radius: var(--radius-4); /* Rounded corners */
+  margin-top: var(--size-fluid-1); /* Space above the button */
+  box-shadow: var(--shadow-2); /* Subtle shadow for depth */
+  transition: all 250ms var(--ease-squish-3); /* Smooth transition for hover effects */
 }
 
+/* 
+  Hover and focus states for button
+  Concept: Pseudo-classes + :is() grouping selector
+*/
+.card__btn:is(:hover, :focus) {
+  text-decoration: none; /* Remove underline on hover/focus */
+  box-shadow: none; /* Remove shadow */
+  transform: scale(1.1); /* Slightly enlarge button */
+}
+
+/* 
+  Container holding all cards
+  Concept: Flexbox layout, spacing, alignment
+*/
+.card-container {
+  display: flex; /* Use Flexbox layout */
+  align-items: start; /* Align items to the top */
+  flex-direction: row; /* Arrange items in a row */
+  justify-content: space-around; /* Space out cards evenly */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  gap: var(--size-fluid-4); /* Space between cards */
+  margin: var(--size-fluid-4); /* Space around container */
+  max-width: 100%; /* Container doesn't exceed viewport width */
+}
+
+/* 
+  Style for individual card
+  Concept: Flex sizing, Grid layout inside, spacing, rounded corners
+*/
 .card {
-  flex: 0 0 400px;
-  place-items: center;
-  box-shadow : var(--shadow-3);
-  padding : var(--size-fluid-3);
-  border-radius: var(--radius-4) ;
-  margin : var(--size-fluid-4);
-  background-color: var(--violet-0);
-  display: grid;
-  gap: var(--size-2);
-
-
-
+  flex: 0 0 400px; /* Fixed card width: don't grow or shrink, always 400px */
+  place-items: center; /* Center grid content */
+  box-shadow: var(--shadow-3); /* Card shadow for depth */
+  padding: var(--size-fluid-3); /* Inner padding */
+  border-radius: var(--radius-4); /* Rounded corners */
+  margin: var(--size-fluid-4); /* Outer margin */
+  background-color: var(--violet-0); /* Card background color */
+  display: grid; /* Use CSS Grid layout inside the card */
+  gap: var(--size-2); /* Space between grid items inside card */
 }
